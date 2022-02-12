@@ -27,7 +27,7 @@ const Home: NextPage = () => {
           showCart ? "hidden sm:hidden md:hidden" : " "
         } `}
       >
-        <header className="w-full relative flex flex-row justify-between align-center max-w-screen-xl px-5 mt-4 mx-auto">
+        <header className="w-full relative flex flex-row justify-between align-center max-w-screen-xl px-5 mt-4 mb-8 mx-auto">
           <div className="hidden sm:flex">
             <Image alt="logo" height={"50%"} src={logo} />
           </div>

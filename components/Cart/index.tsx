@@ -12,7 +12,7 @@ export default function Cart({toggleCart}: CartProps) {
 
   return (
     <div className="w-screen h-full z-20 absolute top-0 right-0 flex flex-col justify-between align-center bg-black space-y-8 lg:w-max lg:h-auto lg:justify-center lg:border-l-2 lg:border-b-2 lg:border-white">
-      <div className="flex flex-col justify-between align-center space-y-4 mx-8">
+      <div className="flex flex-col justify-between align-center space-y-4 mx-4 lg:mx-8">
         <button
           className="self-end text-2xl mt-4"
           onClick={() => {
@@ -26,13 +26,17 @@ export default function Cart({toggleCart}: CartProps) {
             your <span className="alt-text">cart</span>
           </div>
         </h2>
-        <div className="flex flex-col justify-center align-center space-y-10">
+        <div
+          className={`flex flex-col justify-center align-center space-y-10 ${
+            cart.length ? "" : "py-40"
+          }`}
+        >
           {cart.map((cartProduct, cartProductIdx) => {
             return <CartProduct key={cartProductIdx} {...cartProduct} />;
           })}
         </div>
       </div>
-      <div className="flex align-center flex-col mx-8 md:mx-0 md:border-t-2 md:border-white md:flex-row md:justify-between">
+      <div className="flex align-center flex-col mx-4 md:mx-0 md:border-t-2 md:border-white md:flex-row md:justify-between">
         <div className="w-full flex flex-row justify-between align-center p-5 text-4xl uppercase md:block lg:block lg:w-8/12">
           <span>total:</span>
           <span>

@@ -36,7 +36,7 @@ export default function Product(product: IProduct) {
           <div className="w-full absolute text-center uppercase alt-text">add to cart</div>
         </button>
 
-        <div className="w-full h-max self-center">
+        <div className="w-full h-max self-center bg-gradient-to-b from-black bg-translucent-light bg-opacity-10">
           <Image
             alt={product.name}
             height={"400px"}
