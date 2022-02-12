@@ -11,7 +11,7 @@ export default function Cart({toggleCart}: CartProps) {
   const {state: cart} = useContext(CartContext);
 
   return (
-    <div className="w-screen h-full z-20 absolute top-0 right-0 flex flex-col justify-between align-center bg-black space-y-8 lg:w-max lg:h-auto lg:justify-center lg:border-l-2 lg:border-b-2 lg:border-white">
+    <div className="w-screen h-full z-80 absolute top-0 right-0 flex flex-col justify-between align-center bg-black space-y-8 lg:w-max lg:h-auto lg:justify-center lg:border-l-2 lg:border-b-2 lg:border-white">
       <div className="flex flex-col justify-between align-center space-y-4 mx-4 lg:mx-8">
         <button
           className="self-end text-2xl mt-4"

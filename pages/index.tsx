@@ -21,9 +21,13 @@ const Home: NextPage = () => {
 
   return (
     <>
-      {showCart && <Cart toggleCart={setShowCart} />}
+      {showCart && (
+        <div className="z-20 w-full h-full absolute bg-black bg-opacity-60">
+          <Cart toggleCart={setShowCart} />
+        </div>
+      )}
       <div
-        className={`lg:flex lg:flex-col lg:justify-center lg:align-center lg:mt-4 lg:h-max lg:space-y-6 ${
+        className={`lg:h-max lg:flex lg:flex-col lg:justify-center lg:align-center lg:mt-4 lg:space-y-6 ${
           showCart ? "hidden sm:hidden md:hidden" : " "
         } `}
       >
