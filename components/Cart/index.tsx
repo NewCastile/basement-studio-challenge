@@ -4,7 +4,7 @@ import {CartContext} from "../../pages/_app";
 import CartProduct from "../Product/cart";
 
 interface CartProps {
-  toggleCart: Dispatch<SetStateAction<boolean>>;
+  toggleCart: Dispatch<SetStateAction<boolean | null>>;
 }
 
 export default function Cart({toggleCart}: CartProps) {
@@ -22,7 +22,7 @@ export default function Cart({toggleCart}: CartProps) {
           <span className="uppercase">→ close</span>
         </button>
         <h2 className="w-full flex flex-col justify-center align-center md:self-center md:flex-row md:space-x-10">
-          <div className="text-center text-9xl uppercase">
+          <div className="text-center text-6xl sm:text-9xl uppercase">
             your <span className="alt-text">cart</span>
           </div>
         </h2>
@@ -46,7 +46,7 @@ export default function Cart({toggleCart}: CartProps) {
               : 0}
           </span>
         </div>
-        <div className="w-full p-5 text-center uppercase text-6xl alt-text border-t-2 border-white md:text-4xl md:w-max md:border-t-0 md:border-l-2 md:border-white lg:text-4xl">
+        <div className="w-full p-5 text-center uppercase text-4xl sm:text-6xl alt-text border-t-2 border-white md:text-4xl md:w-max md:border-t-0 md:border-l-2 md:border-white lg:text-4xl">
           checkout
         </div>
       </div>

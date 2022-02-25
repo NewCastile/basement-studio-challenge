@@ -16,16 +16,20 @@ import Product from "../components/Product";
 import {CartContext} from "./_app";
 
 const Home: NextPage = () => {
-  const [showCart, setShowCart] = useState<boolean>(false);
+  const [showCart, setShowCart] = useState<boolean | null>(null);
   const {state: cart} = useContext(CartContext);
 
   return (
     <>
-      {showCart && (
-        <div className="z-20 w-full h-full absolute bg-black bg-opacity-60">
+      {showCart === true ? (
+        <div className="fade-in z-20 w-full h-full absolute bg-black bg-opacity-60">
           <Cart toggleCart={setShowCart} />
         </div>
-      )}
+      ) : showCart === false ? (
+        <div className="fade-out z-20 w-full h-full absolute bg-black bg-opacity-60">
+          <Cart toggleCart={setShowCart} />
+        </div>
+      ) : null}
       <div
         className={`lg:h-max lg:flex lg:flex-col lg:justify-center lg:align-center lg:mt-4 lg:space-y-6 ${
           showCart ? "hidden sm:hidden md:hidden" : " "
@@ -39,7 +43,7 @@ const Home: NextPage = () => {
             <Image alt="logo" height={"50%"} src={logoSm} />
           </div>
           <button
-            className="w-28 text-sm font-bold uppercase rounded-full border border-white"
+            className="w-28  text-sm font-bold uppercase rounded-full border border-white"
             onClick={() => setShowCart(true)}
           >
             cart ({cart.length})
@@ -54,15 +58,13 @@ const Home: NextPage = () => {
               <div className="flex flex-col justify-center align-center z-10 absolute left-20">
                 <Image alt={"asterisk"} height={"150px"} src={asterisk} width={"150px"} />
               </div>
-              <div className="flex flex-col justify-center align-cente z-10 absolute right-20 -bottom-10 r">
+              <div className="flex flex-col justify-center align-center z-10 absolute right-20 -bottom-10 r">
                 <Image alt={"asterisk-atl"} height={"150px"} src={asteriskAlt} width={"150px"} />
               </div>
             </div>
             <div className="relative z-0 h-16 w-full flex flex-col justify-center align-center overflow-hidden">
-              <div className="text-3xl w-max">
-                A man can&apos;t have enough basement swag  —  A man can&apos;t have enough basement
-                swag  —  A man can&apos;t have enough basement swag  —  A man can&apos;t have enough
-                basement swag  —  A man can&apos;t have enough basement swag{" "}
+              <div className="animate-slide-in text-3xl w-max">
+                {Array(6).fill("A man can't have enough basement swag  —  ")}
               </div>
             </div>
           </section>
