@@ -37,7 +37,7 @@ export default function Cart({toggleCart}: CartProps) {
         </div>
       </div>
       <div className="flex align-center flex-col mx-4 md:mx-0 md:border-t-2 md:border-white md:flex-row md:justify-between">
-        <div className="w-full flex flex-row justify-between align-center p-5 text-4xl uppercase md:block lg:block lg:w-8/12">
+        <div className="w-full flex flex-row justify-between align-center p-5 space-x-4 text-4xl uppercase md:block lg:block lg:w-8/12">
           <span>total:</span>
           <span>
             $

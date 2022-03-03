@@ -63,7 +63,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="relative z-0 h-16 w-full flex flex-col justify-center align-center overflow-hidden">
-              <div className="animate-slide-in text-3xl w-max">
+              <div className="slide-in text-3xl w-max">
                 {Array(6).fill("A man can't have enough basement swag  —  ")}
               </div>
             </div>
