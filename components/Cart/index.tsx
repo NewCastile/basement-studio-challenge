@@ -11,18 +11,18 @@ export default function Cart({toggleCart}: CartProps) {
   const {state: cart} = useContext(CartContext);
 
   return (
-    <div className="w-screen h-full z-80 absolute top-0 right-0 flex flex-col justify-between align-center bg-black space-y-8 lg:w-max lg:h-auto lg:justify-center lg:border-l-2 lg:border-b-2 lg:border-white">
-      <div className="flex flex-col justify-between align-center space-y-4 mx-4 lg:mx-8">
+    <div className="z-80 align-center lg:w-max lg:h-auto lg:justify-center lg:border-l-2 lg:border-b-2 lg:border-white absolute top-0 right-0 flex flex-col justify-between w-screen h-full space-y-8 bg-black">
+      <div className="align-center lg:mx-8 flex flex-col justify-between mx-4 space-y-4">
         <button
-          className="self-end text-2xl mt-4"
+          className="self-end mt-4 text-2xl"
           onClick={() => {
             toggleCart(false);
           }}
         >
           <span className="uppercase">→ close</span>
         </button>
-        <h2 className="w-full flex flex-col justify-center align-center md:self-center md:flex-row md:space-x-10">
-          <div className="text-center text-6xl sm:text-9xl uppercase">
+        <h2 className="align-center md:self-center md:flex-row md:space-x-10 flex flex-col justify-center w-full">
+          <div className="sm:text-9xl text-6xl text-center uppercase">
             your <span className="alt-text">cart</span>
           </div>
         </h2>
@@ -36,8 +36,8 @@ export default function Cart({toggleCart}: CartProps) {
           })}
         </div>
       </div>
-      <div className="flex align-center flex-col mx-4 md:mx-0 md:border-t-2 md:border-white md:flex-row md:justify-between">
-        <div className="w-full flex flex-row justify-between align-center p-5 space-x-4 text-4xl uppercase md:block lg:block lg:w-8/12">
+      <div className="align-center md:mx-0 md:border-t-2 md:border-white md:flex-row md:justify-between flex flex-col mx-4">
+        <div className="align-center md:block lg:block lg:w-8/12 flex flex-row justify-between w-full p-5 space-x-4 text-4xl uppercase">
           <span>total:</span>
           <span>
             $
@@ -46,7 +46,7 @@ export default function Cart({toggleCart}: CartProps) {
               : 0}
           </span>
         </div>
-        <div className="w-full p-5 text-center uppercase text-4xl sm:text-6xl alt-text border-t-2 border-white md:text-4xl md:w-max md:border-t-0 md:border-l-2 md:border-white lg:text-4xl">
+        <div className="sm:text-6xl alt-text md:text-4xl md:w-max md:border-t-0 md:border-l-2 md:border-white lg:text-4xl w-full p-5 text-4xl text-center uppercase border-t-2 border-white">
           checkout
         </div>
       </div>

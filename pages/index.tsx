@@ -22,11 +22,11 @@ const Home: NextPage = () => {
   return (
     <>
       {showCart === true ? (
-        <div className="fade-in z-20 w-full h-full absolute bg-black bg-opacity-60">
+        <div className="fade-in bg-opacity-60 absolute z-20 w-full h-full overflow-hidden bg-black">
           <Cart toggleCart={setShowCart} />
         </div>
       ) : showCart === false ? (
-        <div className="fade-out z-20 w-full h-full absolute bg-black bg-opacity-60">
+        <div className="fade-out bg-opacity-60 absolute z-20 w-full h-full overflow-hidden bg-black">
           <Cart toggleCart={setShowCart} />
         </div>
       ) : null}
@@ -35,47 +35,47 @@ const Home: NextPage = () => {
           showCart ? "hidden sm:hidden md:hidden" : " "
         } `}
       >
-        <header className="w-full relative flex flex-row justify-between align-center max-w-screen-xl px-5 mt-4 mb-8 mx-auto">
-          <div className="hidden sm:flex">
+        <header className="align-center relative flex flex-row justify-between w-full max-w-screen-xl px-5 mx-auto mt-4 mb-8">
+          <div className="sm:flex hidden">
             <Image alt="logo" height={"50%"} src={logo} />
           </div>
-          <div className="flex sm:hidden">
+          <div className="sm:hidden flex">
             <Image alt="logo" height={"50%"} src={logoSm} />
           </div>
           <button
-            className="w-28  text-sm font-bold uppercase rounded-full border border-white"
+            className="w-28 text-sm font-bold uppercase border border-white rounded-full"
             onClick={() => setShowCart(true)}
           >
             cart ({cart.length})
           </button>
         </header>
-        <main className="flex flex-col justify-center align-center space-y-10">
-          <section className="w-full max-w-screen-xl relative flex flex-col justify-center align-center mx-auto px-5">
+        <main className="align-center flex flex-col justify-center space-y-10">
+          <section className="align-center relative flex flex-col justify-center w-full max-w-screen-xl px-5 mx-auto">
             <Image alt={"header"} src={header} />
           </section>
           <section className="relative w-full mx-auto border-t-2 border-b-2 border-white">
-            <div className="hidden sm:block relative max-w-screen-xl w-full mx-auto">
-              <div className="flex flex-col justify-center align-center z-10 absolute left-20">
+            <div className="sm:block relative hidden w-full max-w-screen-xl mx-auto">
+              <div className="align-center left-20 absolute z-10 flex flex-col justify-center">
                 <Image alt={"asterisk"} height={"150px"} src={asterisk} width={"150px"} />
               </div>
-              <div className="flex flex-col justify-center align-center z-10 absolute right-20 -bottom-10 r">
+              <div className="align-center right-20 -bottom-10 r absolute z-10 flex flex-col justify-center">
                 <Image alt={"asterisk-atl"} height={"150px"} src={asteriskAlt} width={"150px"} />
               </div>
             </div>
-            <div className="relative z-0 h-16 w-full flex flex-col justify-center align-center overflow-hidden">
-              <div className="slide-in text-3xl w-max">
+            <div className="align-center relative z-0 flex flex-col justify-center w-full h-16 overflow-hidden">
+              <div className="slide-in w-max text-3xl">
                 {Array(6).fill("A man can't have enough basement swag  —  ")}
               </div>
             </div>
           </section>
-          <section className="w-full max-w-screen-xl flex flex-col mx-auto px-5 md:grid md:grid-cols-3 md:gap-10 ">
+          <section className="md:grid md:grid-cols-3 md:gap-10 flex flex-col w-full max-w-screen-xl px-5 mx-auto">
             {products.map((product: IProduct, productIdx: number) => {
               return <Product key={productIdx} {...product} />;
             })}
           </section>
         </main>
         <footer>
-          <div className="width-full max-w-screen-xl flex flex-col justify-center align-center mt-10 mx-auto px-5">
+          <div className="width-full align-center flex flex-col justify-center max-w-screen-xl px-5 mx-auto mt-10">
             <Image alt={"footer"} src={footer} />
           </div>
         </footer>

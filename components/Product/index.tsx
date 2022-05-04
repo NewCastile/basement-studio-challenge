@@ -12,12 +12,12 @@ export default function Product(product: IProduct) {
 
   return (
     <article
-      className="flex flex-col justify-center align-center"
+      className="align-center flex flex-col justify-center"
       onMouseEnter={() => {
         if (buttonRef.current && overlayRef.current) {
           buttonRef.current.className =
-            "w-full h-max absolute z-10 flex flex-col justify-center align-center mx-auto";
-          overlayRef.current.className = "w-full h-full bg-black absolute bg-opacity-20";
+            "h-max align-center absolute z-10 flex flex-col justify-center w-full mx-auto";
+          overlayRef.current.className = "bg-opacity-20 absolute w-full h-full bg-black";
         }
       }}
       onMouseLeave={() => {
@@ -27,7 +27,7 @@ export default function Product(product: IProduct) {
         }
       }}
     >
-      <div className="relative flex flex-col justify-center align-center">
+      <div className="align-center relative flex flex-col justify-center">
         <button
           ref={buttonRef}
           className="hidden"
@@ -35,10 +35,12 @@ export default function Product(product: IProduct) {
             dispatcher.addToCart(product);
           }}
         >
-          <Image alt="add-to-cart" src={globe} />
-          <div className="w-full absolute text-center uppercase alt-text">add to cart</div>
+          <div className="flex flex-col w-full">
+            <Image alt="add-to-cart" src={globe} />
+          </div>
+          <div className="alt-text absolute w-full text-center uppercase">add to cart</div>
         </button>
-        <div className="w-full h-max self-center bg-gradient-to-b from-black bg-translucent-light bg-opacity-10">
+        <div className="h-max bg-gradient-to-b from-black bg-translucent-light bg-opacity-10 self-center w-full">
           <Image
             alt={product.name}
             height={"400px"}
@@ -49,7 +51,7 @@ export default function Product(product: IProduct) {
         </div>
         <div ref={overlayRef} className="hidden" />
       </div>
-      <div className="flex flex-row justify-between align-center pt-2 border-t-2 border-white ">
+      <div className="align-center flex flex-row justify-between pt-2 border-t-2 border-white">
         <p className="text-2xl">{product.name}</p>
         <p className="text-2xl">${product.price}</p>
       </div>
